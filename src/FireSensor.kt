@@ -4,10 +4,11 @@ class FireSensor() : Sensor {
     var batteryLeft : Double = 0.0
     val type : String = "Fire sensor"
     val itsLocation : String = ""
+    val setOffChance = 5
 
     override fun isTriggered(): Boolean {
         val RNG = java.util.Random()
-        if ((RNG.nextInt(100)+1 < 6)){
+        if ((RNG.nextInt(100)+1 < setOffChance+1)){
             return true
         }
         return false
@@ -30,4 +31,5 @@ class FireSensor() : Sensor {
         batteryLeft-=batteryTotal*drainSpeed
         if (batteryLeft < 0.0) {batteryLeft = 0.0}
     }
+
 }
