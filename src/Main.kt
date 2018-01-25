@@ -9,7 +9,7 @@ fun main(args: Array<String>) {
         print("Type \"poll\" to poll all sensors once or \"exit\" to exit: ")
         input = scanner.nextLine()
         if (input == "poll") {
-            controlUnit.pollSensors()
+            controlUnit.pollSensors2()
         }
     } while (input != "exit")
 }
